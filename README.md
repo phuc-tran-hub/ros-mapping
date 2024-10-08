@@ -1,6 +1,7 @@
-# ROS-Mapping 
-## Author: Phuc Tran
-## Date: October 2021
+The objective of this project was to enhance my understanding of the real robot and develop basic behaviors while assessing the accuracy of various odometric schemes alongside mapping. I began by coordinating with my team to familiarize myself with the Turtlebot 3, using the provided instructions for guidance. The implementation involved creating three key functions: translate(double d), which controlled the distance traveled in meters; rotate_rel(double angle), which managed relative rotations; and rotate_abs(double angle), which handled absolute rotations.
 
-### Task
-The main goal of the robot was too safely navigate in the environment while simultaneously localizing and mapping the environment. A demonstration will be uploaded soon along with the instruction to run the code.
+After implementing these functions, I executed different movement patterns, including straight-line travel (1 meter), relative rotations (+/- 30 degrees), and square patterns (1-meter sides) with additional rotation to maintain orientation. I measured the actual distance traveled using a ruler and the laser sensor, allowing me to gather data to characterize the motion model's noise. This data was recorded in a CSV file for analysis.
+
+The report included a comparison of the actual and commanded distances traveled, alongside the odometry estimates, as well as actual and commanded angles of rotation. I calculated the mean error and variance for these measurements to assess performance. Furthermore, I developed a node to implement Occupancy Grid Mapping, using laser data to create a grid that reflected the odometric reference frame. I ensured that the mapping adhered to the three states: unknown, free space, and obstacles.
+
+To validate the mapping node, I conducted Stage simulations before testing with the real robot. Teleoperation was utilized to facilitate mapping, focusing on accurately representing the environment. The results were visualized in RViz, showcasing the mapping outcomes.
